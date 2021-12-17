@@ -1,0 +1,81 @@
+<html>
+    <head>
+        <title>File Upload</title>
+        <style>
+            body
+{
+    padding:10px;
+    font-family:verdana;
+    font-size:8pt;
+}
+
+select
+{
+    font-family:verdana;
+    font-size:8pt;
+    width : 150px;
+    height:100px;
+}
+input
+{
+    text-align: center;
+}
+        </style>
+    </head>
+
+  <body>
+    <h1>File Upload</h1>
+    <form method="POST" action="" enctype="multipart/form-data">
+      <p><input type="file" name="file"></p>
+      <p><input type="submit" value="Submit"></p>
+    </form>
+                <b>Group 1:</b><br/>
+               <select multiple="multiple" id='lstBox1'>
+                {{ columns }}
+            </select>
+        
+            <input type='button' id='btnRight' value ='  >  '/>
+            <br/><input type='button' id='btnLeft' value ='  <  '/>
+        
+            <b>Group 2: </b><br/>
+            <form class="form-inline" method="POST" action="">
+                      <span class="input-group-addon">Please select</span>
+                          <select multiple="multiple" name="lstBox2" id="lstBox2">
+                          </select>
+                  <button type="submit" class="btn btn-default">Go</button>
+              </form>
+            <!-- <form action="" method="POST">
+                <select multiple="multiple" name="lstBox2" id='lstBox2'></select>
+                <input type="submit" value="Submit">
+            </form> -->
+  </body>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>
+      $(document).ready(function() {
+    $('#btnRight').click(function(e) {
+        var selectedOpts = $('#lstBox1 option:selected');
+        if (selectedOpts.length == 0) {
+            alert("Nothing to move.");
+            e.preventDefault();
+        }
+
+        $('#lstBox2').append($(selectedOpts).clone());
+        $(selectedOpts).remove();
+        e.preventDefault();
+    });
+
+    $('#btnLeft').click(function(e) {
+        var selectedOpts = $('#lstBox2 option:selected');
+        if (selectedOpts.length == 0) {
+            alert("Nothing to move.");
+            e.preventDefault();
+        }
+
+        $('#lstBox1').append($(selectedOpts).clone());
+        $(selectedOpts).remove();
+        e.preventDefault();
+    });
+});
+  </script>
+
+</html>

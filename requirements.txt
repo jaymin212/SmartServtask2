@@ -1,0 +1,6 @@
+flask
+itsdangerous
+gunicorn
+pandas
+simplejson
+numpy
