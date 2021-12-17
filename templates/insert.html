@@ -29,25 +29,27 @@ input
       <p><input type="file" name="file"></p>
       <p><input type="submit" value="Submit"></p>
     </form>
-                <b>Group 1:</b><br/>
-               <select multiple="multiple" id='lstBox1'>
+<table>
+        <td>
+            <tr><b>Group 1:</b><br/></tr>
+            <tr>   <select multiple="multiple" id='lstBox1'>
                 {{ columns }}
-            </select>
-        
-            <input type='button' id='btnRight' value ='  >  '/>
-            <br/><input type='button' id='btnLeft' value ='  <  '/>
-        
-            <b>Group 2: </b><br/>
+            </select></tr>
+        </td>
+        <td>
+            <tr><input type='button' id='btnRight' value ='  >  '/></tr>
+            <tr><br/><input type='button' id='btnLeft' value ='  <  '/></tr>
+        </td>
+        <td>
+            <tr>
+            <b>Group 2: </b><br/></tr>
             <form class="form-inline" method="POST" action="">
-                      <span class="input-group-addon">Please select</span>
-                          <select multiple="multiple" name="lstBox2" id="lstBox2">
-                          </select>
-                  <button type="submit" class="btn btn-default">Go</button>
-              </form>
-            <!-- <form action="" method="POST">
-                <select multiple="multiple" name="lstBox2" id='lstBox2'></select>
-                <input type="submit" value="Submit">
-            </form> -->
+                
+                <tr><select multiple="multiple" name="lstBox2" id="lstBox2">
+                          </select></tr>
+                          <tr><button type="submit" class="btn btn-default">Go</button></tr>
+              </form></td>
+            </table>
   </body>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script>
